@@ -35,19 +35,20 @@ class NeuralNetwork {
     void gradientDescent();
 
     void gradientClean();
-
-    int batchSize_;
-    int epoch_;
-    double getLoss();
+    int layerCount_;
     float learningRate_;
+
+    double getLoss();
+    float (*activateFunc_)(float);
+    float (*deriveActivateFunc_)(float);
     int inputSize_;
     int outputSize_;
-    int layerCount_;
+    int batchSize_;
+    int epoch_;
     std::vector<Layer> layers_;
     static float sigmoid(float f) { return 1.0 / (1.0 + std::exp(-f)); }
     static float deriveSigmoid(float f) { return sigmoid(f) * (1 - sigmoid(f)); }
-    float (*activateFunc_)(float);
-    float (*deriveActivateFunc_)(float);
+
     inline Eigen::VectorXf stdVecToEigenVec(std::vector<float>& v) {
         //直接把std::vector 的数据转化成eigen的向量，没有额外的拷贝
         return Eigen::Map<Eigen::VectorXf>(v.data(), v.size());

@@ -1,17 +1,17 @@
 [
 {
   "directory": "/home/zhouheng/machine_learning/NN/build",
-  "command": "/usr/bin/g++-9   -I/home/zhouheng/machine_learning/NN/include -I/usr/include/eigen3   -v  -O3 -O3 -DNDEBUG   -std=gnu++17 -o CMakeFiles/NN.dir/main.cpp.o -c /home/zhouheng/machine_learning/NN/main.cpp",
+  "command": "/usr/bin/g++-9   -I/home/zhouheng/machine_learning/NN/include -I/usr/include/eigen3   -v  -O3 -Wall -O3 -DNDEBUG   -std=gnu++17 -o CMakeFiles/NN.dir/main.cpp.o -c /home/zhouheng/machine_learning/NN/main.cpp",
   "file": "/home/zhouheng/machine_learning/NN/main.cpp"
 },
 {
   "directory": "/home/zhouheng/machine_learning/NN/build",
-  "command": "/usr/bin/g++-9   -I/home/zhouheng/machine_learning/NN/include -I/usr/include/eigen3   -v  -O3 -O3 -DNDEBUG   -std=gnu++17 -o CMakeFiles/NN.dir/utils.cpp.o -c /home/zhouheng/machine_learning/NN/utils.cpp",
+  "command": "/usr/bin/g++-9   -I/home/zhouheng/machine_learning/NN/include -I/usr/include/eigen3   -v  -O3 -Wall -O3 -DNDEBUG   -std=gnu++17 -o CMakeFiles/NN.dir/utils.cpp.o -c /home/zhouheng/machine_learning/NN/utils.cpp",
   "file": "/home/zhouheng/machine_learning/NN/utils.cpp"
 },
 {
   "directory": "/home/zhouheng/machine_learning/NN/build",
-  "command": "/usr/bin/g++-9   -I/home/zhouheng/machine_learning/NN/include -I/usr/include/eigen3   -v  -O3 -O3 -DNDEBUG   -std=gnu++17 -o CMakeFiles/NN.dir/neural_network.cpp.o -c /home/zhouheng/machine_learning/NN/neural_network.cpp",
+  "command": "/usr/bin/g++-9   -I/home/zhouheng/machine_learning/NN/include -I/usr/include/eigen3   -v  -O3 -Wall -O3 -DNDEBUG   -std=gnu++17 -o CMakeFiles/NN.dir/neural_network.cpp.o -c /home/zhouheng/machine_learning/NN/neural_network.cpp",
   "file": "/home/zhouheng/machine_learning/NN/neural_network.cpp"
 }
 ]

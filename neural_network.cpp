@@ -146,6 +146,8 @@ float NeuralNetwork::getAccuracy(std::vector<Eigen::VectorXf>& test_xvs,
             correctCount++;
         }
     }
+    // cout << correctCount << "/" << testDataSize << endl;
+
     // cout << correctCount << endl;
     return float(correctCount) / float(testDataSize);
 }
