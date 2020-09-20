@@ -22,7 +22,7 @@ int main(int, char**) {
     auto test_y = parser.parse_labels("../data/t10k-labels-idx1-ubyte");
     //参数{28 * 28, 50, 10}表示构建一个三层的神经网络，其中
     //输入层是28*28=784个节点，隐层是50个节点，输出层是10个节点，隐层数量可以增加，第一个和最后一个总是表示输入层和输出层的节点数量
-    NeuralNetwork nn({28 * 28, 50, 10}, 0.005, 30, 20, &relu, &derive_relu);
+    NeuralNetwork nn({28 * 28, 100,50, 10}, 0.005, 30, 50, &relu, &derive_relu);
     // NeuralNetwork nn({28 * 28, 150, 10}, 0.005, 30, 20);
     nn.train(train_x, train_y, test_x, test_y);
 
