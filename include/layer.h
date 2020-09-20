@@ -15,13 +15,9 @@ struct Layer {
     Eigen::VectorXf biasGrads;
     Layer() = default;
     Layer(int nodes, int nextNodes)
-        : size(nodes),
-          nextSize(nextNodes),
-          weights(Eigen::MatrixXf::Zero(nextSize, nodes)),
-          output(Eigen::VectorXf::Zero(size)),
-          bias(Eigen::VectorXf::Zero(size)),
-          weightGrads(Eigen::MatrixXf::Zero(nextSize, size)),
-          loss(Eigen::VectorXf::Zero(size)),
+        : size(nodes), nextSize(nextNodes), weights(Eigen::MatrixXf::Zero(nextSize, nodes)),
+          output(Eigen::VectorXf::Zero(size)), bias(Eigen::VectorXf::Zero(size)),
+          weightGrads(Eigen::MatrixXf::Zero(nextSize, size)), loss(Eigen::VectorXf::Zero(size)),
           biasGrads(Eigen::VectorXf::Zero(size)){};
 
     inline void randomInit() {

@@ -3,7 +3,6 @@
 //
 
 #include "neural_network.h"
-//#include <omp.h>
 #include <algorithm>
 #include <cassert>
 #include <chrono>
@@ -46,7 +45,6 @@ void NeuralNetwork::backPropagation(const Eigen::VectorXf& y) {
                                .matrix();
     // cout << temp.rows() << endl;
 
-    
     this->layers_.back().biasGrads = temp;
     this->layers_[layerCount_ - 2].weightGrads =
         temp * (this->layers_[layerCount_ - 2].output.transpose());
