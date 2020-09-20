@@ -39,7 +39,7 @@ void NeuralNetwork::backPropagation(const Eigen::VectorXf& y) {
     using namespace Eigen;
     this->layers_.back().loss = (y - this->layers_.back().output);
     VectorXf& lastOutput = this->layers_.back().output;  //输出层的输出
-
+    // temp就是损失对输出层偏置的梯度，同时，在求损失对权重的偏导，和损失对上一层输出的偏导时，也要乘以这个
     Eigen::VectorXf temp = ((this->layers_.back().loss * (-2)).array() *
                             (lastOutput.unaryExpr(this->deriveActivateFunc_).array()))
                                .matrix();
@@ -63,6 +63,7 @@ void NeuralNetwork::backPropagation(const Eigen::VectorXf& y) {
 };
 void NeuralNetwork::gradientDescent() {
     using namespace std;
+    //最后一层没有权重
     for (int i = 0; i < layerCount_ - 1; ++i) {
         auto& l = layers_[i];
         l.bias -= l.biasGrads * learningRate_;
@@ -124,7 +125,7 @@ void NeuralNetwork::train(std::vector<std::vector<float>>& train_xs,
         // cout<<this->layers_[layerCount_-2].weights<<endl;
         // abort();
         cout << "第" << e << "轮已完成,耗时: " << fixed
-             << duration<double>(system_clock::now() - t).count() << "秒,精度：";
+             << duration<double>(system_clock::now() - t).count() << "秒,准确率：";
         cout.flush();
         cout << fixed << this->getAccuracy(testXvecs, testYvecs) * 100 << R"(%,loss: )" << fixed
              << trainingLoss / trainingDataSize << endl;
