@@ -69,6 +69,7 @@ void NeuralNetwork::gradientDescent() {
         l.bias -= l.biasGrads * learningRate_;
         l.weights -= l.weightGrads * learningRate_;
     }
+    this->layers_.back().bias -= this->layers_.back().bias * learningRate_;
 }
 
 void NeuralNetwork::gradientClean() {
